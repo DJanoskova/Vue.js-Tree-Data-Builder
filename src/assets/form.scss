@@ -1,7 +1,11 @@
 .input {
   width: 150px;
-}
 
-.input-small {
-  width: 100px;
+  &-small {
+    width: 100px;
+  }
+
+  &-big {
+    width: 420px;
+  }
 }

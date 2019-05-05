@@ -67,7 +67,7 @@ export default {
   },
   data () {
     return {
-      model: JSON.parse(JSON.stringify(this.value))
+      model: this.value
     }
   },
   methods: {
@@ -79,11 +79,8 @@ export default {
     }
   },
   watch: {
-    model: {
-      deep: true,
-      handler () {
-        this.$emit('input', this.model)
-      }
+    value () {
+      this.model = this.value
     }
   },
   components: {

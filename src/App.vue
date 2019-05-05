@@ -4,13 +4,19 @@
     <p>
       Build data trees optimized for d3 structure quickly with this app!
     </p>
+
+    <div class="text-muted">
+      You can pass an existing JSON config
+      <ElInput v-model="modelJson" class="ml-1 input-big" />
+    </div>
+
     <div class="children-wrapper">
       <Instance v-model="model" :level="0" />
     </div>
+
     <p>
       JSON result
     </p>
-
     <ElTooltip content="Click to copy to clipboard">
       <pre @click="copyData">{{ model }}</pre>
     </ElTooltip>
@@ -26,7 +32,7 @@
 </template>
 
 <script>
-import { Tooltip } from 'element-ui'
+import { Tooltip, Input } from 'element-ui'
 
 import { Child } from './models/child'
 
@@ -43,8 +49,19 @@ export default {
       this.$clipboard(this.model)
     }
   },
+  computed: {
+    modelJson: {
+      get () {
+        return JSON.stringify(this.model)
+      },
+      set (value) {
+        this.model = JSON.parse(value)
+      }
+    }
+  },
   components: {
     [Tooltip.name]: Tooltip,
+    [Input.name]: Input,
     Instance
   }
 };
