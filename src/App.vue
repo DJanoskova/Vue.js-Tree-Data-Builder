@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Tree data builder</h1>
+    <p>
+      Build data trees optimized for d3 structure quickly with this small app!
+    </p>
+    <div class="children-wrapper">
+      <Instance v-model="model" :level="0" />
+    </div>
+    <p>
+      JSON result
+    </p>
+    <pre>{{ model }}</pre>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { Child } from './models/child';
+
+import Instance from './components/Instance'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld,
+  data () {
+    return {
+      model: new Child()
+    }
   },
+  components: {
+    Instance
+  }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
