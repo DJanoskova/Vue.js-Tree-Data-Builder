@@ -35,19 +35,28 @@
       />
     </ElTooltip>
 
+    <span class="handle ml-1">
+      <i class="el-icon-rank" />
+    </span>
+
     <div class="children-wrapper" v-if="model.children.length">
-      <Instance v-for="(instance, key) in model.children"
-        v-model="model.children[key]"
-        :key="instance.id"
-        :level="level + 1"
-        @onDelete="handleDelete"
-      />
+
+      <Draggable v-model="model.children" handle=".handle">
+        <Instance v-for="(instance, key) in model.children"
+          v-model="model.children[key]"
+          :key="instance.id"
+          :level="level + 1"
+          @onDelete="handleDelete"
+        />
+
+      </Draggable>
     </div>
   </div>
 </template>
 
 <script>
 import { Input, Button, Tooltip } from 'element-ui'
+import Draggable from 'vuedraggable'
 
 import { Child } from '../models/child';
 
@@ -73,7 +82,8 @@ export default {
     [Input.name]: Input,
     [Button.name]: Button,
     [Tooltip.name]: Tooltip,
-    Instance: () => import('./Instance')
+    Instance: () => import('./Instance'),
+    Draggable
   },
   mounted () {
     this.$refs.input.focus()

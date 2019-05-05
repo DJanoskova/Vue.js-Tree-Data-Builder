@@ -2,7 +2,7 @@
   <div>
     <h1>Tree data builder</h1>
     <p>
-      Build data trees optimized for d3 structure quickly with this small app!
+      Build data trees optimized for d3 structure quickly with this app!
     </p>
     <div class="children-wrapper">
       <Instance v-model="model" :level="0" />
