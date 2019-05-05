@@ -48,8 +48,8 @@
           :level="level + 1"
           @onDelete="handleDelete"
         />
-
       </Draggable>
+
     </div>
   </div>
 </template>
