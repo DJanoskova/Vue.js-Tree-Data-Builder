@@ -10,12 +10,17 @@
     <p>
       JSON result
     </p>
-    <pre>{{ model }}</pre>
+
+    <ElTooltip content="Click to copy to clipboard">
+      <pre @click="copyData">{{ model }}</pre>
+    </ElTooltip>
   </div>
 </template>
 
 <script>
-import { Child } from './models/child';
+import { Tooltip } from 'element-ui'
+
+import { Child } from './models/child'
 
 import Instance from './components/Instance'
 
@@ -25,7 +30,13 @@ export default {
       model: new Child()
     }
   },
+  methods: {
+    copyData () {
+      this.$clipboard(this.model)
+    }
+  },
   components: {
+    [Tooltip.name]: Tooltip,
     Instance
   }
 };

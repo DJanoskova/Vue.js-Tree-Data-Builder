@@ -1,5 +1,9 @@
 <template>
   <div class="child">
+    <span class="handle mr-1">
+      <i class="el-icon-rank" />
+    </span>
+
     <ElInput
       v-model="model.name"
       placeholder="Name"
@@ -34,10 +38,6 @@
         :disabled="level < 1"
       />
     </ElTooltip>
-
-    <span class="handle ml-1">
-      <i class="el-icon-rank" />
-    </span>
 
     <div class="children-wrapper" v-if="model.children.length">
 

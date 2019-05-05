@@ -1,10 +1,10 @@
 import Vue from 'vue'
-
-import 'element-ui/lib/theme-chalk/index.css'
+import Clipboard from 'v-clipboard'
 
 import App from './App.vue'
 import './assets/main.scss'
 
+Vue.use(Clipboard)
 Vue.config.productionTip = false;
 
 new Vue({
