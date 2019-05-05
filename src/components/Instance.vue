@@ -67,7 +67,7 @@ export default {
   },
   data () {
     return {
-      model: this.value
+      model: JSON.parse(JSON.stringify(this.value))
     }
   },
   methods: {
@@ -76,6 +76,14 @@ export default {
     },
     handleDelete (id) {
       this.model.children = this.model.children.filter(child => child.id !== id)
+    }
+  },
+  watch: {
+    model: {
+      deep: true,
+      handler () {
+        this.$emit('input', this.model)
+      }
     }
   },
   components: {
