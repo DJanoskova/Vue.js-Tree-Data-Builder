@@ -1,3 +1,11 @@
+a {
+  color: $primary;
+
+  &:hover {
+    color: darken($primary, 10%)
+  }
+}
+
 h1 {
   margin-top: 0;
 }
@@ -17,4 +25,8 @@ pre {
   &:hover {
     background: #f2f2f2;
   }
+}
+
+.text-center {
+  text-align: center;
 }

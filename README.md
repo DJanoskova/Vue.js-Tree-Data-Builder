@@ -1,4 +1,9 @@
 # Tree Data Builder
+Build data trees optimized for d3 structure quickly with this app!
+
+<img src="./preview.jpg" alt="Preview">
+
+<a href="https://tree-data-builder.herokuapp.com" target="_blank">https://tree-data-builder.herokuapp.com</a>
 
 ## Project setup
 ```

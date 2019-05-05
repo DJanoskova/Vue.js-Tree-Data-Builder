@@ -14,6 +14,14 @@
     <ElTooltip content="Click to copy to clipboard">
       <pre @click="copyData">{{ model }}</pre>
     </ElTooltip>
+
+    <hr />
+
+    <div class="text-center">
+      <a href="https://github.com/DJanoskova/Vue.js-Tree-Data-Builder" target="_blank">
+        https://github.com/DJanoskova/Vue.js-Tree-Data-Builder
+      </a>
+    </div>
   </div>
 </template>
 
